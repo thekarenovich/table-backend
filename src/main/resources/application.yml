@@ -1,0 +1,28 @@
+server:
+  port: 8081
+
+spring:
+  jpa:
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+        jdbc:
+          lob:
+            non_contextual_creation: true
+    show-sql: false
+  datasource:
+    url: jdbc:postgresql://localhost:5432/table
+    username: postgres
+    password: password
+    driver-class-name: org.postgresql.Driver
+  application:
+    name: table
+  profiles:
+    active: dev
+
+logging:
+  level:
+    org:
+      springframework: DEBUG
